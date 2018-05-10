@@ -23,6 +23,23 @@ public class Lottery {
             word = word.toLowerCase();
             words.add(word);
         }
-        System.out.println("Number of unique words = " + words.size());
+        
+        Iterator<String> itr = words.iterator();
+        while (itr.hasNext()) {
+            String word = itr.next();
+            System.out.println(word);
+        }
+        
+        for (String word : words) {
+            System.out.println(word);
+        }
     }
+    
+    // returns true if the given list contains any duplicate elements
+    public static boolean hasDuplicates(List<Integer> list) {
+        Set<Integer> set = new HashSet<Integer>(list);
+        return set.size() < list.size();
+    }
+    
+    
 }
